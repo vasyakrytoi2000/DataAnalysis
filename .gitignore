@@ -1,0 +1,23 @@
+# Віртуальні середовища
+venv/
+.env/
+*.env
+
+# Дані
+**/data/*
+!**/data/.gitkeep  # якщо хочеш залишити саму папку без файлів
+
+# Кеші та тимчасові файли
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.ipynb_checkpoints/
+
+# Файли IDE
+.vscode/
+.idea/
+
+# Інше
+.DS_Store
+
