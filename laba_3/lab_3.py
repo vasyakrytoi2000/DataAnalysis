@@ -190,8 +190,20 @@ with col1:
 with col2:
     tab1, tab2, tab3 = st.tabs(["Table", "Plot1", "Plot2"])
 
+    df_tab3 = df[
+            (df['Area'].isin([area_turtle[area_box1], area_turtle[area_box2]])) &
+            (df['Year'] >= min_y) & (df['Year'] <= max_y) & 
+            (df['Week'] >= min_w) & (df['Week'] <= max_w) 
+            ]
+
+    df_table = df[
+            (df['Area'] == area_turtle[area_box1]) &
+            (df['Year'] >= min_y) & (df['Year'] <= max_y) & 
+            (df['Week'] >= min_w) & (df['Week'] <= max_w) 
+            ]
+    
     with tab1:
-        st.table(df.head(st.session_state['number_of_rows'])) 
+        st.table(df_table.head(st.session_state['number_of_rows'])) 
     
     with tab2:
         sns.set_theme(style="darkgrid")
@@ -200,12 +212,7 @@ with col2:
             (df['Year'] >= min_y) & (df['Year'] <= max_y) & 
             (df['Week'] >= min_w) & (df['Week'] <= max_w) 
             ]
-        df_tab3 = df[
-            (df['Area'] == area_turtle[area_box1]) |
-            (df['Area'] == area_turtle[area_box2]) &
-            (df['Year'] >= min_y) & (df['Year'] <= max_y) & 
-            (df['Week'] >= min_w) & (df['Week'] <= max_w) 
-            ]
+        
         inv_turtle_area = {v: k for k, v in area_turtle.items()}
 
         df_tab3['AreaName'] = df_tab3['Area'].map(inv_turtle_area)
@@ -225,6 +232,7 @@ with col2:
             st.pyplot(plt)
         
     with tab3:
+        
         if compare_2:
             if min_y == max_y:
                 plt.figure(figsize=(12,10))
