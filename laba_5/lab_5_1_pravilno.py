@@ -4,7 +4,7 @@ from matplotlib.widgets import Slider, CheckButtons, Button
 from scipy.signal import butter, filtfilt
 
 def filter(signal, cutoff_freq, fs):
-    b, a = butter(N=4, Wn=cutoff_freq / (0.5 * fs), btype='low')
+    b, a = butter(N=4, Wn=cutoff_freq / (0.5 * fs))
     return filtfilt(b, a, signal)
 
 # default params

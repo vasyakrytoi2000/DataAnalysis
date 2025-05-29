@@ -22,14 +22,27 @@ initials = {
 # filter
 def low_filter(signal, cutoff_freq, fs):
     b, a = butter(N=4, Wn=cutoff_freq / (0.5 * fs))
-    return filtfilt(b, a, signal)
+    return filtfilt(b, a, signal)   
 
-def moving_average_filter(signal, window_size):
-    window_size = max(1, int(window_size))
-    cumsum = np.cumsum(np.insert(signal, 0, 0))
-    filtered = (cumsum[window_size:] - cumsum[:-window_size]) / window_size
-    prefix = signal[:window_size-1]
-    return np.concatenate([prefix, filtered])
+# def moving_average_filter(signal, window_size):
+#     window_size = max(1, int(window_size))
+#     cumsum = np.cumsum(np.insert(signal, 0, 0))
+#     filtered = (cumsum[window_size:] - cumsum[:-window_size]) / window_size
+#     prefix = signal[:window_size-1]
+#     return np.concatenate([prefix, filtered])
+
+def moving_average_filter(signal, window):
+    result = np.empty_like(signal)
+    half = window // 2
+
+    for idx in range(len(signal)):
+        start = idx - half
+        end = idx + half + 1
+
+        segment = signal[max(0, start) : min(len(signal), end)]
+        result[idx] = segment.mean()
+
+    return result
 
 source = ColumnDataSource(data=dict(
     t=t,
