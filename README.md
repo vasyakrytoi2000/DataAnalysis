@@ -1,6 +1,8 @@
-# Analysis of Ukraine's Vegetation Health Indices
+#H1 Here are collected the laboratory works that I performed during my studies🎓
 
-## Lab 2
+##H2 Brief information about each of the laboratory works :
+(more detailed description in each laboratory directory)
+###H3 Laba 2
 You can get acquainted with interesting data using Jupyter Notebook.
 
 ## Lab 3
