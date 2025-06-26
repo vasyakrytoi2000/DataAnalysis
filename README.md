@@ -24,4 +24,4 @@ Almost the same as in ***lab 2***, but the tasks were performed using both panda
 ### Laba 5
 ![Matplotlib](https://img.shields.io/badge/Matplotlib-Plotting-2CA5E0?logo=matplotlib&logoColor=white) ![Bokeh](https://img.shields.io/badge/Bokeh-InteractivePlots-purple?logo=bokeh&logoColor=white)
 
-Almost the same as in ***lab 2***, but the tasks were performed using both pandas dataframes and numpy arrays. The data is again loaded automatically, from the following [site](https://archive.ics.uci.edu/dataset/235/individual%2Bhousehold%2Belectric%2Bpower%2Bconsumption))
+This lab differs from the others the most because here I worked with Matplotlib and Bokeh, in short the task was to construct and display a harmonic, generate noise to it, and you can also interactively change various harmonic parameters. The following filters were also implemented: Butterfort low-pass filter, and moving average. Similar tasks were also performed on Bokeh
