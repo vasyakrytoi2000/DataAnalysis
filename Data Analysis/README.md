@@ -1,4 +1,4 @@
-# Here are collected the laboratory works that I performed during my studies🎓
+# Data Analysis📊
 
 ## Brief information about each of the laboratory works :
 [![My Skills](https://skillicons.dev/icons?i=py,vscode)](https://skillicons.dev)
